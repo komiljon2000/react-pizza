@@ -1,0 +1,121 @@
+@import './variables';
+// font-family: 'Dela Gothic One', sans-serif;
+// font-family: 'Pacifico', cursive;
+
+.categories{
+  width: 100%;
+  height: 100%;
+  padding-top: 76px;
+}
+
+.categories_container{
+  max-width: 1225px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.categories_wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categorie_types-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    color: $primary-white;
+    font-family: 'Dela Gothic One', sans-serif;
+    cursor: pointer;
+    transition: .4s;
+    margin-right: 9px;
+    background: transparent;
+    color: $primary-light-gray;
+    &:hover{
+      background-color: $primary-lighter-gray;
+      color: $primary-white;
+    }
+  }
+}
+
+.categorie_types-btn-active{
+  background: $primary-dark-gray !important; 
+  color: $primary-white !important;
+}
+
+.sort_types-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  p{
+    color: $primary-light-gray;
+    font-family: $primary-font-bold;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    padding: 0 8px;
+  }
+  span{
+    color: $primary-orange;
+    font-family: $primary-font-bold;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    border-bottom: 1px dashed $primary-orange;
+  }
+}
+
+.sort_types-wrapper-img{
+  margin-top: 3px;
+  transform: rotate(0deg);
+  transition: .5s;
+}
+.sort_types-wrapper-img-down{
+  margin-top: 3px;
+  transform: rotate(180deg);
+  transition: .5s;
+}
+
+.categories_dropdown-popup{
+  padding: 22px 15px;
+  border-radius: 10px;
+  background-color: $primary-white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: -155px;
+  right: -27px;
+  gap: 20px;
+  border: 2px solid #cecece;
+  p{
+    color: $primary-black;
+    font-family: $primary-font-bold;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    cursor: pointer;
+    transition: .4s;
+    &:hover{
+      color: $primary-orange;
+    }
+  }
+}
+
+.categories_dropdown-active{
+  color: $primary-orange;
+}
