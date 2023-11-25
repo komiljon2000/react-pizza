@@ -16,10 +16,10 @@ const PizzaBlock: React.FC<Props> = ({ title, price, img, sizes, types }) => {
   const [activeSize, setActiveSize] = useState(0);
 
   function playMelody() {
-    // const audio = new Audio("../../../src/assets/voisec/metallic.mp3");
-    // audio.play();
-    const audio = new SpeechSynthesisUtterance("Ассаламу Алейкум");
-    window.speechSynthesis.speak(audio);
+    const audio = new Audio("../../../src/assets/voisec/metallic.mp3");
+    audio.play();
+    // const audio = new SpeechSynthesisUtterance("Ассаламу Алейкум");
+    // window.speechSynthesis.speak(audio);
   }
 
   function voiceOpen() {
