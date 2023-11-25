@@ -15,6 +15,18 @@ const PizzaBlock: React.FC<Props> = ({ title, price, img, sizes, types }) => {
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
 
+  function playMelody() {
+    const audio = new Audio("../../../src/assets/voisec/metallic.mp3");
+    audio.play();
+    // const audio = new SpeechSynthesisUtterance("Ассаламу Алейкум");
+    // window.speechSynthesis.speak(audio);
+  }
+
+  function voiceOpen() {
+    setAddedNumber(addedNumber + 1);
+    playMelody();
+  }
+
   return (
     <div className={m.product_item}>
       <img src={img} alt="Pizza" className={m["product_item-img"]} />
@@ -53,7 +65,7 @@ const PizzaBlock: React.FC<Props> = ({ title, price, img, sizes, types }) => {
 
       <div className={m["product_item-prices-wrapper"]}>
         <p>от {price} ₽</p>
-        <button onClick={() => setAddedNumber(addedNumber + 1)}>
+        <button onClick={voiceOpen}>
           <svg
             width="12"
             height="12"

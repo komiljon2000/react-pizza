@@ -31,8 +31,26 @@
   height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit,  1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 35px;
   grid-row-gap: 60px;
   padding-top: 35px;
+}
+
+
+
+
+
+@media only screen and (max-width: 1313px) {
+  .products{
+    padding-left: 32px;
+    padding-right: 30px;
+  }
+};
+
+@media only screen and (max-width: 1055px) {
+  .product_items-wrapper{
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
