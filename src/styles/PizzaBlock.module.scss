@@ -349,7 +349,7 @@
       padding: 5px 12px;
       font-size: 11px;
     }
-  } 
+  }
 }
 
 @media only screen and (max-width: 860px) {
@@ -406,5 +406,269 @@
 }
 
 @media only screen and (max-width: 797px) {
+  .product_item{
+    max-width: 280px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .product_item{
+    max-width: 260px;
+  }
+
+  .product_item-title-wrapper{
+    p{
+      font-size: 18px;
+    }
+  }
+
+  .product_item-info-wrapper {
+    margin: 0px 0 10px 0; 
+  }
+
+  .product_item-prices-wrapper{
+    justify-content: center;
+    gap: 10px;
+    button{
+      max-width: 135px;
+      padding: 8px 0px 8px 8px;
+      p{
+        font-size: 14px;
+        span{
+          width: 20px;
+          height: 20px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .product_item-type-wrapper{
+    p{  
+      font-size: 13px;
+    }
+  }
+
+  .product_item-size-wrapper {
+    p {
+      padding: 5px 12px;
+      font-size: 11px;
+    }
+  }
+} 
+
+
+@media only screen and (max-width: 610px) {
+    .product_item{
+      max-width: 240px;
+    }
   
+    .product_item-title-wrapper{
+      p{
+        font-size: 16px;
+      }
+    }
+  
+    .product_item-info-wrapper {
+      margin: 0px 0 10px 0; 
+    }
+  
+    .product_item-type-wrapper{
+      p{  
+        font-size: 11px;
+      }
+    }
+  
+    .product_item-size-wrapper {
+      p {
+        padding: 5px 11px;
+        font-size: 10px;
+      }
+    } 
+  
+    .product_item-prices-wrapper{
+      justify-content: center;
+      gap: 10px;
+      p{
+        font-size: 19px;
+      }
+      button{
+        max-width: 125px;
+        padding: 8px 0px 8px 7px;
+        p{
+          font-size: 14px;
+          span{
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  
+    .products{
+      padding-bottom: 40px;
+    }
+  }
+
+@media only screen and (max-width: 570px) {
+  .product_item{
+    max-width: 280px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .product_item{
+    max-width: 260px;
+  }
+
+  .product_item-title-wrapper{
+    p{
+      font-size: 18px;
+    }
+  }
+
+  .product_item-info-wrapper {
+    margin: 0px 0 10px 0; 
+  }
+
+  .product_item-prices-wrapper{
+    justify-content: center;
+    gap: 10px;
+    button{
+      max-width: 135px;
+      padding: 8px 0px 8px 8px;
+      p{
+        font-size: 14px;
+        span{
+          width: 20px;
+          height: 20px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .product_item-type-wrapper{
+    p{  
+      font-size: 13px;
+    }
+  }
+
+  .product_item-size-wrapper {
+    p {
+      padding: 5px 12px;
+      font-size: 11px;
+    }
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .product_item{
+    max-width: 240px;
+  }
+
+  .product_item-title-wrapper{
+    p{
+      font-size: 16px;
+    }
+  }
+
+  .product_item-info-wrapper {
+    margin: 0px 0 10px 0; 
+  }
+
+  .product_item-type-wrapper{
+    p{  
+      font-size: 11px;
+    }
+  }
+
+  .product_item-size-wrapper {
+    p {
+      padding: 5px 11px;
+      font-size: 10px;
+    }
+  } 
+
+  .product_item-prices-wrapper{
+    justify-content: center;
+    gap: 10px;
+    p{
+      font-size: 19px;
+    }
+    button{
+      max-width: 125px;
+      padding: 8px 0px 8px 7px;
+      p{
+        font-size: 14px;
+        span{
+          width: 18px;
+          height: 18px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .products{
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .product_item{
+    max-width: 215px;
+  }
+
+  .product_item-title-wrapper{
+    p{
+      font-size: 14px;
+    }
+  }
+
+  .product_item-info-wrapper {
+    margin: 0px 0 10px 0; 
+  }
+
+  .product_item-type-wrapper{
+    p{  
+      font-size: 9px;
+    }
+  }
+
+  .product_item-size-wrapper {
+    p {
+      padding: 5px 11px;
+      font-size: 8px;
+    }
+  } 
+
+  .product_item-prices-wrapper{
+    justify-content: center;
+    gap: 10px;
+    p{
+      font-size: 16px;
+    }
+    button{
+      max-width: 125px;
+      padding: 8px 0px 8px 7px;
+      p{
+        font-size: 14px;
+        span{
+          width: 18px;
+          height: 18px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .products{
+    padding-bottom: 40px;
+  }
 }
