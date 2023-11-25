@@ -34,10 +34,10 @@ const Basket: React.FC<Props> = (_props) => {
                 <img src={basket_icon} alt="Basket Icon" />
                 <p>Корзина</p>
               </div>
-              <div className={m["basket_top-right"]}>
+              <Link to="noleftbasket" className={m["basket_top-right"]}>
                 <img src={delete_icon} alt="Trash Icon" />
                 <p>Очистить корзину</p>
-              </div>
+              </Link>
             </div>
             <div className={m.horizontal_line}></div>
             <div className={m["basket_added-pizzas"]}>
