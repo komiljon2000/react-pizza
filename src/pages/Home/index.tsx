@@ -9,7 +9,7 @@ const Home: React.FC<Props> = (_props) => {
     <>
       <Header />
       <Categories />
-      {/* <Products /> */}
+      <Products />
     </>
   );
 };
