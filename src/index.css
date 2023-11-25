@@ -39,3 +39,9 @@ span::selection {
   color: #fff;
   background-color: #00ff0074;
 }
+
+@media only screen and (max-width: 1390px) {
+  body {
+    padding: 0 20px;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import m from "../../styles/Header.module.scss";
 import header_logo from "../../assets/images/full_logo.svg";
 import header_basket from "../../assets/images/basket_logo.svg";
+import logo_itself from "../../assets/images/logo_itself.svg";
 import { Link } from "react-router-dom";
 
 interface Props {}
@@ -13,7 +14,16 @@ const Header: React.FC<Props> = (_props) => {
         <div className={m.header_container}>
           <div className={m.header_wrapper}>
             <Link className={m["header_logo-wrapper"]} to="/">
-              <img src={header_logo} alt="React Pizza Logo" />
+              <img
+                className={m.header_logo}
+                src={header_logo}
+                alt="React Pizza Logo"
+              />
+              <img
+                className={m["header_media-logo"]}
+                src={logo_itself}
+                alt="React Pizza Logo"
+              />
             </Link>
 
             <Link className={m["header_basket-wrapper"]} to="/basket">

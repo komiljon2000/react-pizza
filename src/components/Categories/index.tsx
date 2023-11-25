@@ -1,15 +1,17 @@
 import React from "react";
 import m from "../../styles/Categories.module.scss";
 import categories_dreopdown from "../../assets/images/dropdown.svg";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 interface Props {}
 
 const Categories: React.FC<Props> = (_props) => {
   const [activeInedex, setActiveInedex] = useState(0);
   const [openSorting, setOpenSorting] = useState(false);
+  const [openCategory, setOpenCategory] = useState(false);
   const [activeSort, setActiveSort] = useState(0);
+  const controls = useAnimation();
 
   const onClickCategory = (index: number) => {
     setActiveInedex(index);
@@ -24,6 +26,38 @@ const Categories: React.FC<Props> = (_props) => {
     "Закрытые",
   ];
 
+  useEffect(() => {
+    if (!openCategory) {
+      controls.start("closed");
+    } else {
+      controls.start("open");
+    }
+  }, [openCategory, controls]);
+
+  const dropdownVariants = {
+    open: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        opacity: { duration: 0.2 },
+        height: { duration: 0.2, ease: "easeInOut" },
+      },
+    },
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        opacity: { duration: 0.2 },
+        height: { duration: 0.2, ease: "easeInOut" },
+      },
+    },
+  };
+
+  const handleClick = (index: number) => {
+    setOpenCategory(false); // Close dropdown when an item is clicked
+    onClickCategory(index);
+  };
+
   return (
     <div className={m.categories}>
       <div className={m.categories_container}>
@@ -35,7 +69,9 @@ const Categories: React.FC<Props> = (_props) => {
                   onClick={() => onClickCategory(index)}
                   className={
                     m[
-                      activeInedex === index ? "categorie_types-btn-active" : ""
+                      activeInedex === index
+                        ? "categorie_types-btn-active"
+                        : "categorie_types-btn"
                     ]
                   }
                 >
@@ -44,6 +80,67 @@ const Categories: React.FC<Props> = (_props) => {
               );
             })}
           </div>
+
+          {/* <div className={m["media_categorie_types-wrapper"]}>
+            <button onClick={() => setOpenCategory(!openCategory)}>
+              Open Dropdown
+            </button>
+            {openCategory &&
+              categories?.map((categoryItem: any, index: number) => {
+                return (
+                  <motion.a
+                    onClick={() => onClickCategory(index)}
+                    className={
+                      m[
+                        activeInedex === index
+                          ? "categorie_types-btn-active"
+                          : "categorie_types-btn"
+                      ]
+                    }
+                  >
+                    {categoryItem}
+                  </motion.a>
+                );
+              })}
+          </div> */}
+
+          <div className={m["main_media_categorie_types-wrapper"]}>
+            <button
+              onClick={() => setOpenCategory(!openCategory)}
+              className={m.category_btn}
+            >
+              {categories[2]}
+            </button>
+
+            <motion.div
+              variants={dropdownVariants}
+              initial="closed"
+              animate={controls}
+              exit="closed"
+              style={{ overflow: "hidden" }}
+              className={m["media_categorie_types-wrapper"]}
+            >
+              {openCategory &&
+                categories?.map((categoryItem: any, index: number) => (
+                  <motion.a
+                    key={index}
+                    onClick={() => handleClick(index)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className={
+                      m[
+                        activeInedex === index
+                          ? "media_categorie_types-btn-active"
+                          : "media_categorie_types-btn"
+                      ]
+                    }
+                  >
+                    {categoryItem}
+                  </motion.a>
+                ))}
+            </motion.div>
+          </div>
+
           <div
             onClick={() => setOpenSorting(!openSorting)}
             className={m["sort_types-wrapper"]}
@@ -59,7 +156,7 @@ const Categories: React.FC<Props> = (_props) => {
               }
               alt="Dropdown Icon"
             />
-            <p>Сортировка по:</p>
+            <p className={m.media_d_none}>Сортировка по:</p>
             <span>популярности</span>
             {openSorting && (
               <motion.div

@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/basket" element={<Basket />} />
-        <Route path="/  " element={<NoLeftBasket />} />
+        <Route path="/noleftbasket" element={<NoLeftBasket />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
