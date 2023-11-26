@@ -107,7 +107,7 @@ const Basket: React.FC<Props> = (_props) => {
                 Всего пицц: <strong>3 шт.</strong>
               </p>
               <p>
-                Сумма заказа:{" "}
+                Сумма заказа:
                 <strong className={m["basket_bottom-price-strong"]}>
                   900 ₽
                 </strong>

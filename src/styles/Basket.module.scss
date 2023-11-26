@@ -258,3 +258,123 @@
     background-color: #fe5f1ec4;
   }
 }
+
+// MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA
+// MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA
+// MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA MEIDA
+
+@media only screen and (max-width: 911px) {
+  .basket {
+    margin-top: 90px;
+    padding: 0 20px;
+  }
+
+  .header{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header_container{
+    padding: 0;
+  }
+
+  .basket_bottom-btn {
+    padding-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .basket {
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+
+  .basket_bottom-btn {
+    padding-bottom: 60px;
+  }
+
+  .horizontal_line {
+    margin: 20px 0;
+  }
+
+  .basket_added-pizzas {
+    gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .basket {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .basket_bottom-counter {
+    margin: 30px 0;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .basket_pizza-info-titles{
+    h2{
+      font-size: 20px;
+    }
+  }
+  .basket_pizza-info-titles{
+    p{
+      font-size: 14px;
+    }
+  }
+
+  .basket_pizza-info{
+   img {
+     width: 70px;
+     height: 70px;
+   }
+  }
+
+  .basket_pizza-adder{
+    p{
+      font-size: 20px;
+    }
+  }
+
+  .basket_pizza-price{
+    h2{
+      font-size: 20px;
+    }
+  }
+
+  .basket_bottom-counter {
+    p {
+      font-size: 20px;
+      strong{
+        font-size: 20px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .basket_bottom-back-btn {
+    padding: 15px 25px;
+    p{
+      font-size: 15px;
+    }
+  }
+
+  .basket_bottom-buy-btn{
+    padding: 15px 25px;
+    p{
+      font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .basket_bottom-btn {
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+    
+}
