@@ -3,8 +3,6 @@ import m from "../../styles/Basket.module.scss";
 import { Link } from "react-router-dom";
 import header_logo from "../../assets/images/full_logo.svg";
 import pizza_one from "../../assets/images/pizza1.svg";
-import pizza_two from "../../assets/images/pizza2.svg";
-import pizza_three from "../../assets/images/pizza3.svg";
 import basket_icon from "../../assets/images/basket_gray.svg";
 import delete_icon from "../../assets/images/delete_gray.svg";
 import delete_icon_circle from "../../assets/images/circle_delete_gray.svg";
