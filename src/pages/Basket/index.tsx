@@ -49,56 +49,64 @@ const Basket: React.FC<Props> = (_props) => {
                     <p>тонкое тесто, 26 см.</p>
                   </div>
                 </div>
-                <div className={m["basket_pizza-adder"]}>
-                  <img src={minus_icon} alt="Minus Icon" />
-                  <p>2</p>
-                  <img src={plus_icon} alt="Plus Icon" />
-                </div>
-                <div className={m["basket_pizza-price"]}>
-                  <h2>770 ₽ </h2>
-                </div>
-                <div className={m["basket_pizza-deleter"]}>
-                  <img src={delete_icon_circle} alt="Delet Circle Icon" />
+                <div className={m.pizza_info_2}>
+                  <div className={m["basket_pizza-adder"]}>
+                    <img src={minus_icon} alt="Minus Icon" />
+                    <p>2</p>
+                    <img src={plus_icon} alt="Plus Icon" />
+                  </div>
+                  <div className={m["basket_pizza-price"]}>
+                    <h2>770 ₽ </h2>
+                  </div>
+                  <div className={m["basket_pizza-deleter"]}>
+                    <img src={delete_icon_circle} alt="Delet Circle Icon" />
+                  </div>
                 </div>
               </div>
+
               <div className={m["basket_added-pizza-item"]}>
                 <div className={m["basket_pizza-info"]}>
-                  <img src={pizza_two} alt="First Pizza" />
+                  <img src={pizza_one} alt="First Pizza" />
                   <div className={m["basket_pizza-info-titles"]}>
                     <h2>Сырный цыпленок</h2>
                     <p>тонкое тесто, 26 см.</p>
                   </div>
                 </div>
-                <div className={m["basket_pizza-adder"]}>
-                  <img src={minus_icon} alt="Minus Icon" />
-                  <p>2</p>
-                  <img src={plus_icon} alt="Plus Icon" />
-                </div>
-                <div className={m["basket_pizza-price"]}>
-                  <h2>770 ₽ </h2>
-                </div>
-                <div className={m["basket_pizza-deleter"]}>
-                  <img src={delete_icon_circle} alt="Delet Circle Icon" />
+                <div className={m.pizza_info_2}>
+                  <div className={m["basket_pizza-adder"]}>
+                    <img src={minus_icon} alt="Minus Icon" />
+                    <p>2</p>
+                    <img src={plus_icon} alt="Plus Icon" />
+                  </div>
+                  <div className={m["basket_pizza-price"]}>
+                    <h2>770 ₽ </h2>
+                  </div>
+                  <div className={m["basket_pizza-deleter"]}>
+                    <img src={delete_icon_circle} alt="Delet Circle Icon" />
+                  </div>
                 </div>
               </div>
+
               <div className={m["basket_added-pizza-item"]}>
                 <div className={m["basket_pizza-info"]}>
-                  <img src={pizza_three} alt="First Pizza" />
+                  <img src={pizza_one} alt="First Pizza" />
                   <div className={m["basket_pizza-info-titles"]}>
                     <h2>Сырный цыпленок</h2>
                     <p>тонкое тесто, 26 см.</p>
                   </div>
                 </div>
-                <div className={m["basket_pizza-adder"]}>
-                  <img src={minus_icon} alt="Minus Icon" />
-                  <p>2</p>
-                  <img src={plus_icon} alt="Plus Icon" />
-                </div>
-                <div className={m["basket_pizza-price"]}>
-                  <h2>770 ₽ </h2>
-                </div>
-                <div className={m["basket_pizza-deleter"]}>
-                  <img src={delete_icon_circle} alt="Delet Circle Icon" />
+                <div className={m.pizza_info_2}>
+                  <div className={m["basket_pizza-adder"]}>
+                    <img src={minus_icon} alt="Minus Icon" />
+                    <p>2</p>
+                    <img src={plus_icon} alt="Plus Icon" />
+                  </div>
+                  <div className={m["basket_pizza-price"]}>
+                    <h2>770 ₽ </h2>
+                  </div>
+                  <div className={m["basket_pizza-deleter"]}>
+                    <img src={delete_icon_circle} alt="Delet Circle Icon" />
+                  </div>
                 </div>
               </div>
             </div>

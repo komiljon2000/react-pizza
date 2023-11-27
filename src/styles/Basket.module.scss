@@ -104,6 +104,14 @@
   align-items: center;
 }
 
+.pizza_info_2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 40%;
+}
+
 .basket_pizza-info{
   display: flex;
   justify-content: flex-start;
@@ -376,5 +384,219 @@
 }
 
 @media only screen and (max-width: 605px) {
-    
+  .basket{
+    margin-top: 45px;
+  }
+
+  .basket_top-left {
+    gap: 10px;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    p {
+      font-size: 28px;
+    }
+  }
+  
+  .basket_pizza-info {
+    gap: 5px;
+  }
+
+  .horizontal_line {
+    margin: 18px 0;
+  }
+
+  .basket_top-left {
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .basket_pizza-info {
+    img {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  .basket_pizza-info-titles {
+    h2 {
+      font-size: 19px;
+    }
+  }
+
+  .basket_pizza-adder{
+    img{
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .basket_pizza-price {
+    h2 {
+      font-size: 19px;
+    }
+  }
+
+  .basket_pizza-deleter {
+    img {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+
+  .basket_bottom-counter {
+    p {
+      font-size: 18px;
+      strong{
+        font-size: 18px;
+      }
+    }
+  }
+
+  .basket_bottom-back-btn {
+    padding: 13px 20px; 
+  }
+
+  .basket_bottom-buy-btn {
+    padding: 13px 20px; 
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .header_logo-wrapper{
+    img{
+      width: 260px; 
+    }
+  }
+
+  .basket {
+    margin-top: 30px;
+  }
+
+  .horizontal_line {
+    margin: 10px 0;
+  }
+
+  .basket_top-left {
+    p {
+      font-size: 25px;
+    }
+  }
+
+  .basket_top-right {
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .basket_pizza-info {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .basket_pizza-info-titles {
+    h2 {
+      font-size: 17px;
+    }
+  }
+
+  .basket_pizza-info-titles {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .basket_pizza-adder{
+    img {
+      width: 22px;
+      height: 25px;
+    }
+  }
+
+  .basket_pizza-adder {
+    gap: 7px;
+  }
+
+  .basket_pizza-adder {
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .basket_pizza-price{
+    h2 {
+      font-size: 17px;
+    }
+  }
+
+  .basket_pizza-deleter {
+    img{
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .basket_bottom-counter {
+    p {
+      font-size: 16px;
+    }
+
+    strong{
+      font-size: 17px;
+    }
+  }
+
+  .basket_bottom-back-btn {
+    padding: 10px 15px;
+  }
+
+  .basket_bottom-buy-btn{
+    padding: 10px 15px;
+  }
+
+  .basket_bottom-btn {
+    padding-bottom: 30px;
+  }
+
+  .header{
+    padding-top: 35px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .basket_added-pizza-item {
+    flex-direction: column;
+  }
+
+  .pizza_info_2 {
+    width: 54%;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .basket_bottom-counter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .basket_bottom-btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .basket_top-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header_wrapper {
+    justify-content: center;
+  }
 }
