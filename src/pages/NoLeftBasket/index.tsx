@@ -14,7 +14,11 @@ const NoLeftBasket: React.FC<Props> = (_props) => {
         <div className={m.header_container}>
           <div className={m.header_wrapper}>
             <Link className={m["header_logo-wrapper"]} to="/">
-              <img src={header_logo} alt="React Pizza Logo" />
+              <img
+                className={m.header_img}
+                src={header_logo}
+                alt="React Pizza Logo"
+              />
             </Link>
           </div>
         </div>
