@@ -11,7 +11,14 @@ const Categories: React.FC<Props> = (_props) => {
   const [openSorting, setOpenSorting] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
   const [activeSort, setActiveSort] = useState(0);
+  const [activeSortId, setActiveSortId] = useState("популярности");
   const controls = useAnimation();
+  const sortTypes = ["популярности", "по цене", "по алфавиту"];
+
+  function onClickActiveSort(i: number) {
+    setActiveSort(i);
+    setActiveSortId(sortTypes[i]);
+  }
 
   const onClickCategory = (index: number) => {
     setActiveInedex(index);
@@ -81,29 +88,6 @@ const Categories: React.FC<Props> = (_props) => {
             })}
           </div>
 
-          {/* <div className={m["media_categorie_types-wrapper"]}>
-            <button onClick={() => setOpenCategory(!openCategory)}>
-              Open Dropdown
-            </button>
-            {openCategory &&
-              categories?.map((categoryItem: any, index: number) => {
-                return (
-                  <motion.a
-                    onClick={() => onClickCategory(index)}
-                    className={
-                      m[
-                        activeInedex === index
-                          ? "categorie_types-btn-active"
-                          : "categorie_types-btn"
-                      ]
-                    }
-                  >
-                    {categoryItem}
-                  </motion.a>
-                );
-              })}
-          </div> */}
-
           <div className={m["main_media_categorie_types-wrapper"]}>
             <button
               onClick={() => setOpenCategory(!openCategory)}
@@ -157,7 +141,8 @@ const Categories: React.FC<Props> = (_props) => {
               alt="Dropdown Icon"
             />
             <p className={m.media_d_none}>Сортировка по:</p>
-            <span>популярности</span>
+            <span>{activeSortId}</span>
+
             {openSorting && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
@@ -165,36 +150,20 @@ const Categories: React.FC<Props> = (_props) => {
                 exit={{ opacity: 0, y: -10 }}
                 className={m["categories_dropdown-popup"]}
               >
-                <motion.p
-                  onClick={() => setActiveSort(0)}
-                  className={
-                    m[activeSort === 0 ? "categories_dropdown-active" : ""]
-                  }
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  популярности
-                </motion.p>
-                <motion.p
-                  onClick={() => setActiveSort(1)}
-                  className={
-                    m[activeSort === 1 ? "categories_dropdown-active" : ""]
-                  }
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  по цене
-                </motion.p>
-                <motion.p
-                  onClick={() => setActiveSort(2)}
-                  className={
-                    m[activeSort === 2 ? "categories_dropdown-active" : ""]
-                  }
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  по алфавиту
-                </motion.p>
+                {sortTypes?.map((sortType, i) => {
+                  return (
+                    <motion.p
+                      onClick={() => onClickActiveSort(i)}
+                      className={
+                        m[activeSort === i ? "categories_dropdown-active" : ""]
+                      }
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      {sortType}
+                    </motion.p>
+                  );
+                })}
               </motion.div>
             )}
           </div>
