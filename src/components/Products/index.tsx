@@ -5,10 +5,10 @@ import Skeleton from "../PizzaBlock/Skeleton";
 import { pizzaTypes } from "../../types";
 
 interface Props {
-  pizzatypes: pizzaTypes[];
+  pizzatype: pizzaTypes[];
 }
 
-const Products: React.FC<Props> = (_pizzatypes) => {
+const Products: React.FC<Props> = () => {
   const [items, setItems] = useState<pizzaTypes[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
