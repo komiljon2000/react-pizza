@@ -13,9 +13,10 @@ const Products: React.FC<Props> = (_props) => {
           <div className={m["products_name-wrapper"]}>
             <h1>Все пиццы</h1>
             <div className={m["product_items-wrapper"]}>
-              {products?.map((pizza) => {
+              {products?.map((pizza, index) => {
                 return (
                   <PizzaBlock
+                    key={index}
                     title={pizza.title}
                     img={pizza.imageUrl}
                     price={pizza.price}

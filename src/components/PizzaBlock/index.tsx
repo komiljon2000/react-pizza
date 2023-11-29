@@ -39,6 +39,7 @@ const PizzaBlock: React.FC<Props> = ({ title, price, img, sizes, types }) => {
           <div className={m["product_item-type-wrapper"]}>
             {types.map((typeId: number, i) => (
               <p
+                key={i}
                 onClick={() => setActiveType(i)}
                 className={
                   m[activeType === i ? "product_item-type-active" : ""]
@@ -51,6 +52,7 @@ const PizzaBlock: React.FC<Props> = ({ title, price, img, sizes, types }) => {
           <div className={m["product_item-size-wrapper"]}>
             {sizes?.map((size, i) => (
               <p
+                key={i}
                 onClick={() => setActiveSize(i)}
                 className={
                   m[activeSize === i ? "product_item-size-active" : ""]

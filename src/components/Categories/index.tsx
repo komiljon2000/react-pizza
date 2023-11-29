@@ -73,6 +73,7 @@ const Categories: React.FC<Props> = (_props) => {
             {categories?.map((categoryItem, index) => {
               return (
                 <button
+                  key={index}
                   onClick={() => onClickCategory(index)}
                   className={
                     m[
@@ -153,6 +154,7 @@ const Categories: React.FC<Props> = (_props) => {
                 {sortTypes?.map((sortType, i) => {
                   return (
                     <motion.p
+                      key={i}
                       onClick={() => onClickActiveSort(i)}
                       className={
                         m[activeSort === i ? "categories_dropdown-active" : ""]
