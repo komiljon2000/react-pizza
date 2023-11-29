@@ -120,10 +120,10 @@ const Basket: React.FC<Props> = (_props) => {
               </p>
             </div>
             <div className={m["basket_bottom-btn"]}>
-              <button className={m["basket_bottom-back-btn"]}>
+              <Link to="/" className={m["basket_bottom-back-btn"]}>
                 <img src={back_icon} alt="" />
                 <p>Вернуться назад</p>
-              </button>
+              </Link>
               <button className={m["basket_bottom-buy-btn"]}>
                 <p>Оплатить сейчас</p>
               </button>

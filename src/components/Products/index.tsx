@@ -20,6 +20,7 @@ const Products: React.FC<Props> = (_pizzatypes) => {
       .then((data) => {
         setItems(data), setIsLoading(false);
       });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
