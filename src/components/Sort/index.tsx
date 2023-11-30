@@ -19,13 +19,7 @@ interface valueNameType {
 }
 
 interface YourValueType {
-  sortProperty: string; // Adjust the type if it's different
-  // ...other properties
-}
-
-interface YourObjType {
-  sortProperty: string; // Adjust the type if it's different
-  // ...other properties
+  sortProperty: string;
 }
 
 const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
