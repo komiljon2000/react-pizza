@@ -3,16 +3,19 @@ import m from "../../styles/Categories.module.scss";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-interface Props {}
+interface Props {
+  value: number;
+  onClickCategoryIdChange: any;
+}
 
-const Categories: React.FC<Props> = (_props) => {
-  const [activeInedex, setActiveInedex] = useState(0);
+const Categories: React.FC<Props> = ({ value, onClickCategoryIdChange }) => {
+  function onClickCategoryIdChanger(index: number) {
+    onClickCategoryIdChange(index);
+    setOpenCategory(false);
+  }
+
   const [openCategory, setOpenCategory] = useState(false);
   const controls = useAnimation();
-
-  const onClickCategory = (index: number) => {
-    setActiveInedex(index);
-  };
 
   const categories = [
     "Все",
@@ -50,11 +53,6 @@ const Categories: React.FC<Props> = (_props) => {
     },
   };
 
-  const handleClick = (index: number) => {
-    setOpenCategory(false); // Close dropdown when an item is clicked
-    onClickCategory(index);
-  };
-
   return (
     <>
       <div className={m["categorie_types-wrapper"]}>
@@ -62,10 +60,10 @@ const Categories: React.FC<Props> = (_props) => {
           return (
             <button
               key={index}
-              onClick={() => onClickCategory(index)}
+              onClick={() => onClickCategoryIdChange(index)}
               className={
                 m[
-                  activeInedex === index
+                  value === index
                     ? "categorie_types-btn-active"
                     : "categorie_types-btn"
                 ]
@@ -97,12 +95,12 @@ const Categories: React.FC<Props> = (_props) => {
             categories?.map((categoryItem: any, index: number) => (
               <motion.a
                 key={index}
-                onClick={() => handleClick(index)}
+                onClick={() => onClickCategoryIdChanger(index)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={
                   m[
-                    activeInedex === index
+                    value === index
                       ? "media_categorie_types-btn-active"
                       : "media_categorie_types-btn"
                   ]

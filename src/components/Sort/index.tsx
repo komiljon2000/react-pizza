@@ -4,17 +4,23 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import categories_dreopdown from "../../assets/images/dropdown.svg";
 
-interface Props {}
+interface Props {
+  value: number;
+  onClickSortIdChange: any;
+}
 
-const Sort: React.FC<Props> = (_props) => {
-  const [activeSort, setActiveSort] = useState(0);
+const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
   const [activeSortId, setActiveSortId] = useState("популярности");
   const [openSorting, setOpenSorting] = useState(false);
-  const sortTypes = ["популярности", "по цене", "по алфавиту"];
+  const sortTypes = [
+    { name: "популярности", sortProperty: "rating" },
+    { name: "по цене", sortProperty: "price" },
+    { name: "по алфавиту", sortProperty: "title" },
+  ];
 
-  function onClickActiveSort(i: number) {
-    setActiveSort(i);
-    setActiveSortId(sortTypes[i]);
+  function onClickSortIdChanger(i: number) {
+    onClickSortIdChange(i);
+    setActiveSortId(sortTypes[i].name);
   }
 
   return (
@@ -48,14 +54,12 @@ const Sort: React.FC<Props> = (_props) => {
               return (
                 <motion.p
                   key={i}
-                  onClick={() => onClickActiveSort(i)}
-                  className={
-                    m[activeSort === i ? "categories_dropdown-active" : ""]
-                  }
+                  onClick={() => onClickSortIdChanger(i)}
+                  className={m[value === i ? "categories_dropdown-active" : ""]}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  {sortType}
+                  {sortType.name}
                 </motion.p>
               );
             })}
