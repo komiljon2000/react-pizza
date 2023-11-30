@@ -11,8 +11,11 @@ interface Props {}
 const Products: React.FC<Props> = () => {
   const [items, setItems] = useState<pizzaTypes[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [categoryId, setCategoryId] = useState(0);
-  const [sortType, setSortType] = useState({
+  const [categoryId, setCategoryId] = useState<number>(0);
+  const [sortType, setSortType] = useState<{
+    name: string;
+    sortProperty: string;
+  }>({
     name: "популярности",
     sortProperty: "rating",
   });
@@ -46,7 +49,10 @@ const Products: React.FC<Props> = () => {
             />
             <Sort
               value={sortType}
-              onClickSortIdChange={(index: number) => setSortType(index)}
+              onClickSortIdChange={(sortTypeOfPizza: {
+                name: string;
+                sortProperty: string;
+              }) => setSortType(sortTypeOfPizza)}
             />
           </div>
         </div>

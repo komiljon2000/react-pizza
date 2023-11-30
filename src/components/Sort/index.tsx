@@ -4,21 +4,40 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import categories_dreopdown from "../../assets/images/dropdown.svg";
 
+interface SortType {
+  name: string;
+  sortProperty: string;
+}
+
 interface Props {
-  value: number;
+  value: object;
   onClickSortIdChange: any;
+}
+
+interface valueNameType {
+  name: string;
+}
+
+interface YourValueType {
+  sortProperty: string; // Adjust the type if it's different
+  // ...other properties
+}
+
+interface YourObjType {
+  sortProperty: string; // Adjust the type if it's different
+  // ...other properties
 }
 
 const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
   const [openSorting, setOpenSorting] = useState(false);
-  const sortTypes = [
+  const sortTypes: SortType[] = [
     { name: "популярности", sortProperty: "rating" },
     { name: "по цене", sortProperty: "price" },
     { name: "по алфавиту", sortProperty: "title" },
   ];
 
-  function onClickSortIdChanger(i: number) {
-    onClickSortIdChange(i);
+  function onClickSortIdChanger(obj: object) {
+    onClickSortIdChange(obj);
   }
 
   return (
@@ -39,7 +58,7 @@ const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
           alt="Dropdown Icon"
         />
         <p className={m.media_d_none}>Сортировка по:</p>
-        <span>{value.name}</span>
+        <span>{(value as valueNameType).name}</span>
 
         {openSorting && (
           <motion.div
@@ -48,25 +67,21 @@ const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
             exit={{ opacity: 0, y: -10 }}
             className={m["categories_dropdown-popup"]}
           >
-            {sortTypes?.map((obj, i) => {
-              return (
-                <motion.p
-                  key={i}
-                  onClick={() => onClickSortIdChanger(obj)}
-                  className={
-                    m[
-                      value.sortProperty === obj.sortProperty
-                        ? "categories_dropdown-active"
-                        : ""
-                    ]
-                  }
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {obj.name}
-                </motion.p>
-              );
-            })}
+            {sortTypes?.map((obj, i) => (
+              <motion.p
+                key={i}
+                onClick={() => onClickSortIdChanger(obj)}
+                className={
+                  (value as YourValueType)?.sortProperty === obj.sortProperty
+                    ? m["categories_dropdown-active"]
+                    : ""
+                }
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {obj.name}
+              </motion.p>
+            ))}
           </motion.div>
         )}
       </div>
