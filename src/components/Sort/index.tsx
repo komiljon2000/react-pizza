@@ -10,7 +10,6 @@ interface Props {
 }
 
 const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
-  const [activeSortId, setActiveSortId] = useState("популярности");
   const [openSorting, setOpenSorting] = useState(false);
   const sortTypes = [
     { name: "популярности", sortProperty: "rating" },
@@ -20,7 +19,6 @@ const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
 
   function onClickSortIdChanger(i: number) {
     onClickSortIdChange(i);
-    setActiveSortId(sortTypes[i].name);
   }
 
   return (
@@ -41,7 +39,7 @@ const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
           alt="Dropdown Icon"
         />
         <p className={m.media_d_none}>Сортировка по:</p>
-        <span>{activeSortId}</span>
+        <span>{value.name}</span>
 
         {openSorting && (
           <motion.div
@@ -50,16 +48,22 @@ const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
             exit={{ opacity: 0, y: -10 }}
             className={m["categories_dropdown-popup"]}
           >
-            {sortTypes?.map((sortType, i) => {
+            {sortTypes?.map((obj, i) => {
               return (
                 <motion.p
                   key={i}
-                  onClick={() => onClickSortIdChanger(i)}
-                  className={m[value === i ? "categories_dropdown-active" : ""]}
+                  onClick={() => onClickSortIdChanger(obj)}
+                  className={
+                    m[
+                      value.sortProperty === obj.sortProperty
+                        ? "categories_dropdown-active"
+                        : ""
+                    ]
+                  }
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  {sortType.name}
+                  {obj.name}
                 </motion.p>
               );
             })}

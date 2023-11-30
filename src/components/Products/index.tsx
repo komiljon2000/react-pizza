@@ -12,14 +12,17 @@ const Products: React.FC<Props> = () => {
   const [items, setItems] = useState<pizzaTypes[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [categoryId, setCategoryId] = useState(0);
-  const [sortType, setSortType] = useState(0);
+  const [sortType, setSortType] = useState({
+    name: "популярности",
+    sortProperty: "rating",
+  });
 
   useEffect(() => {
     setIsLoading(true);
     fetch(
       `https://65656be7eb8bb4b70ef18428.mockapi.io/items?${
         categoryId > 0 ? `category=${categoryId}` : ""
-      }`
+      }&sortBy=${sortType.sortProperty}&order=desc`
     )
       .then((res) => {
         return res.json();
