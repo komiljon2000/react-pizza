@@ -18,7 +18,7 @@ interface valueNameType {
   name: string;
 }
 
-interface YourValueType {
+interface sortPropertyType {
   sortProperty: string;
 }
 
@@ -66,7 +66,7 @@ const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
                 key={i}
                 onClick={() => onClickSortIdChanger(obj)}
                 className={
-                  (value as YourValueType)?.sortProperty === obj.sortProperty
+                  (value as sortPropertyType)?.sortProperty === obj.sortProperty
                     ? m["categories_dropdown-active"]
                     : ""
                 }
