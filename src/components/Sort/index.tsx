@@ -25,9 +25,12 @@ interface sortPropertyType {
 const Sort: React.FC<Props> = ({ value, onClickSortIdChange }) => {
   const [openSorting, setOpenSorting] = useState(false);
   const sortTypes: SortType[] = [
-    { name: "популярности", sortProperty: "rating" },
-    { name: "по цене", sortProperty: "price" },
-    { name: "по алфавиту", sortProperty: "title" },
+    { name: "популярности(desc)", sortProperty: "rating" },
+    { name: "популярности(asc)", sortProperty: "-rating" },
+    { name: "по цене(desc)", sortProperty: "price" },
+    { name: "по цене(asc)", sortProperty: "-price" },
+    { name: "по алфавиту(desc)", sortProperty: "title" },
+    { name: "по алфавиту(asc)", sortProperty: "-title" },
   ];
 
   function onClickSortIdChanger(obj: object) {
