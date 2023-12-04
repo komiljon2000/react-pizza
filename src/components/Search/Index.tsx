@@ -3,7 +3,10 @@ import m from "../../styles/Search.module.scss";
 import { TbSearch } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
 
-interface Props {}
+interface Props {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
 
 const Search: React.FC<Props> = ({ searchValue, setSearchValue }) => {
   return (
@@ -17,7 +20,7 @@ const Search: React.FC<Props> = ({ searchValue, setSearchValue }) => {
         className={m["input-group__input"]}
       />
       {searchValue && (
-        <IoClose onCLick={() => setSearchValue("")} className={m.clear_icon} />
+        <IoClose onClick={() => setSearchValue("")} className={m.clear_icon} />
       )}
     </div>
   );

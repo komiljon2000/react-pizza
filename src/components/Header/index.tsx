@@ -6,7 +6,10 @@ import logo_itself from "../../assets/images/logo_itself.svg";
 import { Link } from "react-router-dom";
 import Search from "../Search/Index";
 
-interface Props {}
+interface Props {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
 
 const Header: React.FC<Props> = ({ searchValue, setSearchValue }) => {
   return (
