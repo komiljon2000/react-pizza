@@ -16,16 +16,18 @@ const Products: React.FC<Props> = () => {
     name: string;
     sortProperty: string;
   }>({
-    name: "популярности",
+    name: "популярности(desc)",
     sortProperty: "rating",
   });
+
+  const category = categoryId > 0 ? `category=${categoryId}` : "";
+  const sortBy = sortType.sortProperty.replace("-", "");
+  const order = sortType.sortProperty.includes("-") ? "asc" : "desc";
 
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://65656be7eb8bb4b70ef18428.mockapi.io/items?${
-        categoryId > 0 ? `category=${categoryId}` : ""
-      }&sortBy=${sortType.sortProperty}&order=desc`
+      `https://65656be7eb8bb4b70ef18428.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}`
     )
       .then((res) => {
         return res.json();
@@ -37,6 +39,21 @@ const Products: React.FC<Props> = () => {
   }, [categoryId, sortType]);
 
   console.log(categoryId, sortType);
+
+  const skeleton = [...new Array(8)].map((_, ind) => <Skeleton key={ind} />);
+
+  const pizzas = items?.map((pizza, index) => {
+    return (
+      <PizzaBlock
+        key={index}
+        title={pizza.title}
+        img={pizza.imageUrl}
+        price={pizza.price}
+        sizes={pizza.sizes}
+        types={pizza.types}
+      />
+    );
+  });
 
   return (
     <>
@@ -63,20 +80,7 @@ const Products: React.FC<Props> = () => {
             <div className={m["products_name-wrapper"]}>
               <h1>Все пиццы</h1>
               <div className={m["product_items-wrapper"]}>
-                {isLoading
-                  ? [...new Array(8)].map((_, ind) => <Skeleton key={ind} />)
-                  : items?.map((pizza, index) => {
-                      return (
-                        <PizzaBlock
-                          key={index}
-                          title={pizza.title}
-                          img={pizza.imageUrl}
-                          price={pizza.price}
-                          sizes={pizza.sizes}
-                          types={pizza.types}
-                        />
-                      );
-                    })}
+                {isLoading ? skeleton : pizzas}
               </div>
             </div>
           </div>

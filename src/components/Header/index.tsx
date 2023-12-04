@@ -4,10 +4,11 @@ import header_logo from "../../assets/images/full_logo.svg";
 import header_basket from "../../assets/images/basket_logo.svg";
 import logo_itself from "../../assets/images/logo_itself.svg";
 import { Link } from "react-router-dom";
+import Search from "../Search/Index";
 
 interface Props {}
 
-const Header: React.FC<Props> = (_props) => {
+const Header: React.FC<Props> = ({ searchValue, setSearchValue }) => {
   return (
     <>
       <div className={m.header}>
@@ -25,6 +26,8 @@ const Header: React.FC<Props> = (_props) => {
                 alt="React Pizza Logo"
               />
             </Link>
+
+            <Search searchValue={searchValue} setSearchValue={setSearchValue} />
 
             <Link className={m["header_basket-wrapper"]} to="/basket">
               <button className={m["header_basket-btn"]}>
